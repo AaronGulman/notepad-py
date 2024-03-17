@@ -18,10 +18,10 @@ def save_file():
         open_file.close()
 
 def open_file():
-       file=filedialog.askopenfile(mode='r',filetype=[('text files','*.txt')])
+       file=filedialog.askopenfile(mode='r',filetypes=[('text files','*.txt')])
        if file is not None:
                content=file.read()
-               entry.insert(INSERT.content)
+               entry.insert(END, content)
 
 
 b1 = Button(root,width='20',height='2',bg='#fff',text='save file',command=save_file).place(x=100,y=5)
