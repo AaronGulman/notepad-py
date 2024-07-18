@@ -11,15 +11,16 @@ root.resizable(False,False)
 
 def save_file():
         open_file=filedialog.asksaveasfile(mode='w',defaultextension='.txt',filetypes=[
-                        ( 'text files','*.txt'),
-                       ('HTML files','*.html'),
-                      ( 'CSS files','*.css'),
-                       ('C files','*.c'),
-                      ( 'C++ files','*.cpp'),
-                       ('JAVA files','*.java'),
-                      ( 'JAVASCRIPT files','*.js'),
-                      ( 'C# files','*.cs'),
-                      ( 'C# files','*.csh')
+                        ('text files','*.txt'),
+                        ('HTML files','*.html'),
+                        ('CSS files','*.css'),
+                        ('C files','*.c'),
+                        ('C++ files','*.cpp'),
+                        ('JAVA files','*.java'),
+                        ('JAVASCRIPT files','*.js'),
+                        ('C# files','*.cs'),
+                        ('C# files','*.csh'),
+                        ('BASH files','*.sh')
         ])
         if open_file is None:
                 return
@@ -30,15 +31,17 @@ def save_file():
 def open_file():
        file=filedialog.askopenfile(mode='r',filetypes=[
             ('All supported files', '*.txt *.html *.css *.js *.java *.c *.cpp *.csh *.cs'),
-                      ( 'text files','*.txt'),
-                       ('HTML files','*.html'),
-                      ( 'CSS files','*.css'),
-                       ('C files','*.c'),
-                      ( 'C++ files','*.cpp'),
-                       ('JAVA files','*.java'),
-                      ( 'JAVASCRIPT files','*.js'),
-                      ( 'C# files','*.cs'),
-                      ( 'C# files','*.csh')
+                        ('text files','*.txt'),
+                        ('HTML files','*.html'),
+                        ('CSS files','*.css'),
+                        ('C files','*.c'),
+                        ('C++ files','*.cpp'),
+                        ('JAVA files','*.java'),
+                        ('JAVASCRIPT files','*.js'),
+                        ('C# files','*.cs'),
+                        ('C# files','*.csh'),
+                        ('BASH files','*.sh')
+
                ]
                                    )
        if file is not None:
