@@ -10,7 +10,17 @@ root.resizable(False,False)
 
 
 def save_file():
-        open_file=filedialog.asksaveasfile(mode='w',defaultextension='.txt')
+        open_file=filedialog.asksaveasfile(mode='w',defaultextension='.txt',filetypes=[
+                        ( 'text files','*.txt'),
+                       ('HTML files','*.html'),
+                      ( 'CSS files','*.css'),
+                       ('C files','*.c'),
+                      ( 'C++ files','*.cpp'),
+                       ('JAVA files','*.java'),
+                      ( 'JAVASCRIPT files','*.js'),
+                      ( 'C# files','*.cs'),
+                      ( 'C# files','*.csh')
+        ])
         if open_file is None:
                 return
         text=str(entry.get(1.0,END))
@@ -18,7 +28,19 @@ def save_file():
         open_file.close()
 
 def open_file():
-       file=filedialog.askopenfile(mode='r',filetypes=[('text files','*.txt')])
+       file=filedialog.askopenfile(mode='r',filetypes=[
+            ('All supported files', '*.txt *.html *.css *.js *.java *.c *.cpp *.csh *.cs'),
+                      ( 'text files','*.txt'),
+                       ('HTML files','*.html'),
+                      ( 'CSS files','*.css'),
+                       ('C files','*.c'),
+                      ( 'C++ files','*.cpp'),
+                       ('JAVA files','*.java'),
+                      ( 'JAVASCRIPT files','*.js'),
+                      ( 'C# files','*.cs'),
+                      ( 'C# files','*.csh')
+               ]
+                                   )
        if file is not None:
                content=file.read()
                entry.insert(END, content)
