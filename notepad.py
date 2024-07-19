@@ -13,7 +13,9 @@ def save_file():
         ('JavaScript files', '*.js'),
         ('C# files', '*.cs'),
         ('Bash files', '*.sh'),
-        ('Assembly files', '*.asm')
+        ('Assembly files', '*.asm'),
+        ('Python files', '*.py')
+
     ])
     if open_file is None:
         return
@@ -37,7 +39,9 @@ def open_file():
         ('JavaScript files', '*.js'),
         ('C# files', '*.cs'),
         ('Bash files', '*.sh'),
-        ('Assembly files', '*.asm')
+        ('Assembly files', '*.asm'),
+        ('Python files', '*.py')
+
     ])
     if file is not None:
         try:
@@ -132,7 +136,7 @@ def highlight_parentheses_and_curly_braces(text):
             entry.tag_add("curly_braces", f"1.0+{index}c", f"1.0+{index+1}c")
 
 root = Tk()
-root.geometry('600x600')
+root.geometry('765x770')
 root.title('Notepy')
 root.config(bg='black')
 root.resizable(False, False)
@@ -140,9 +144,9 @@ root.resizable(False, False)
 b1 = Button(root, width='20', height='2', bg='#fff', text='Save File', command=save_file)
 b1.place(x=100, y=5)
 b2 = Button(root, width='20', height='2', bg='#fff', text='Open File', command=open_file)
-b2.place(x=300, y=5)
+b2.place(x=450, y=5)
 
-entry = Text(root, height='33', width='82', wrap=WORD, font=('Times New Roman', 18), bg='#070630')
+entry = Text(root, height='33', width='82', wrap=WORD, font=('Times New Roman', 18),fg='#18ab18' ,bg='#05021a')
 entry.place(x=10, y=60)
 
 entry.bind('<KeyRelease>', on_text_change)  # Bind text change event for syntax highlighting
